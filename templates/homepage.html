@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Blogr{% endblock %}
+
+{% block body %}
+  <h1>Blog Home</h1>
+  <h3>Create an Account</h3>
+  <form action="/users" method="POST">
+    <p>
+    Username <input type="text" name="username">
+    </p>
+    <p>
+      Password <input type="password" name="password">
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+  
+  <h3>Log In</h3>
+  <form action="/login" method="POST">
+    <p>
+      Username <input type="text" name="username">
+    </p>
+    <p>
+      Password <input type="password" name="password">
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+{% endblock %}

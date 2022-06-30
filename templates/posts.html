@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Blogr{% endblock %}
+
+{% block body %}
+<h1>Blog Posts</h1>
+<p><a href="/archive">View posts by date</a></p>
+
+{% for post in posts %}
+
+<h3> {{ post.post_subject }} </h3>
+<p>{{ post.post_text }}</p>
+<p>Date: {{ post.post_date }}</p>
+<p>tags: {{ post.post_tag }}</p>
+
+{% endfor %}
+
+<h4><label for="query">Search posts by tag:</label></h4>
+<form action="/query" method="GET">
+    <input type="text" name="query">
+    <input type="submit">
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Blogr{% endblock %}
+
+{% block body %}
+<h1>View Posts by Date</h1>
+
+<ul>
+  {% for post in posts %}
+  <li><a href="/posts/{{ post.post_id }}">
+        {{ post.post_date }}
+    </a>
+  </li>
+  <form method="post" action="/edit-post/{{ post.post_id }}">
+  <input type="submit" value="edit">
+  </form>
+  <form method="post" action="/delete-post/{{ post.post_id }}">
+  <input type="submit" value="delete">
+  </form>
+  {% endfor %}
+</ul>
+{% endblock %}
