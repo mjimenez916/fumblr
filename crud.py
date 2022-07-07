@@ -58,7 +58,10 @@ def edit_blog_post(post_id):
 
     post = Post.query.get(post_id)
 
-    return post
+    return
+
+#TODO: pass in arguments: subject, post, tags
+
 
 if __name__ == '__main__':
     from server import app

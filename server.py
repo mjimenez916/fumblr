@@ -1,6 +1,6 @@
 """Server for blog app."""
 
-from flask import (Flask, render_template, request, flash, session,
+from flask import (Flask, render_template, request, flash, session, jsonify,
                    redirect)
 from model import connect_to_db, db
 import crud
@@ -113,11 +113,11 @@ def process_login():
         return redirect("/")
 
 
-@app.route("/logout")
+@app.route("/logout", methods = ["POST"])
 def process_logout():
     """Log user out."""
-
-    del session['current_user']
+    if 'current_user' in session:
+        del session['current_user']
     flash("Logged out.")
     return redirect("/")
 
@@ -187,14 +187,34 @@ def delete_blog_post(post_id):
     
      post = crud.delete_blog_post(post_id)
      db.session.commit()
-     return redirect("/archive")
+     return "Successfully deleted"
+# INSTEAD OF REDIRECTING, I CAN RETURN "SUCCESS OR POST DELETED"
+
+@app.route('/edit-post/<post_id>', methods=["GET"])
+def show_edit_blog_post(post_id):
+    
+     post = crud.get_post_by_id(post_id)
+     db.session.commit()
+     return render_template("post_details.html", post=post)
+
+#TODO: capture what user typed in the javascript form. 
 
 @app.route('/edit-post/<post_id>', methods=["POST"])
 def edit_blog_post(post_id):
-    
-     post = crud.edit_blog_post(post_id)
-     db.session.commit()
-     return redirect("/archive")
+     
+    post = crud.get_post_by_id(post_id)
+    post_subject = request.form.get('post_subject')
+    post_text = request.form.get('post_text')
+    post_tag = request.form.get('post_tag')
+
+    post.post_subject = post_subject
+    post.post_text = post_text
+    post.tag = post_tag
+
+    db.session.commit()
+
+    return redirect("/posts")
+
 
 if __name__ == "__main__":
     app.secret_key = "mango"

@@ -10,12 +10,8 @@
         {{ post.post_date }}
     </a>
   </li>
-  <form method="post" action="/edit-post/{{ post.post_id }}">
-  <input type="submit" value="edit">
-  </form>
-  <form method="post" action="/delete-post/{{ post.post_id }}">
-  <input type="submit" value="delete">
-  </form>
+
+  <input type="submit" value="delete" class="delete" id="post_id">
   {% endfor %}
 </ul>
 {% endblock %}
