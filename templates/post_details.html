@@ -4,7 +4,7 @@
 {% block body %}
 <h2>{{ post.post_subject }}</h2>
 
-{{ post.post_text }}
+{{ post.post_text | safe }}
 
 <p> tags:
   {{ post.post_tag }}
@@ -41,5 +41,7 @@
       <script src="/static/update-posts.js">
       </script>
     </body>
+    <script src="/static/edit-posts.js"></script>
+
 {% endblock %}
 

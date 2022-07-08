@@ -77,16 +77,10 @@ def create_post():
 @app.route("/posts")
 def show_posts():
 
-    posts = crud.get_all_posts()
-    print('********')
-    print('********')
-    print('********')
-    print('********')    
+    posts = crud.get_all_posts()  
     for post in posts:
         print(post.post_text)
-    print('********')
-    print('********')
-    print('********')
+
     return render_template("posts.html", posts=posts)
 
 @app.route("/archive")
@@ -195,14 +189,9 @@ def delete_blog_post(post_id):
     
      post = crud.delete_blog_post(post_id)
      db.session.commit()
-     print('*****')
-     print('*****')
-     print('*****')
-     print('*****')
-     print('*****')
+
      print("Testing delete function")
-     print('*****')
-     print('*****')
+
      return "Successfully deleted"
 # INSTEAD OF REDIRECTING, I CAN RETURN "SUCCESS OR POST DELETED"
 
