@@ -12,7 +12,7 @@ class User(db.Model):
     password = db.Column(db.String)
     is_public = db.Column(db.Boolean)
 
-    # posts can be accessed due to line 29
+    # posts can be accessed due to line 30
     
     def __repr__(self):
         return f'<User user_id={self.user_id} username={self.username}>'
@@ -28,7 +28,7 @@ class Post(db.Model):
     post_tag = db.Column(db.Text)
 
     user = db.relationship("User", backref="posts")
-    # images can be accessed due to line 40
+    # images can be accessed due to line 42
     def __repr__(self):
         return f"<Post post_id={self.post_id} post_text={self.post_text}>"
 

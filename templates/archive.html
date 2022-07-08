@@ -6,12 +6,15 @@
 
 <ul>
   {% for post in posts %}
+  <div id="post-{{post.post_id}}">
   <li><a href="/posts/{{ post.post_id }}">
         {{ post.post_date }}
     </a>
   </li>
-
-  <input type="submit" value="delete" class="delete" id="post_id">
+  <input type="submit" value="delete" class="delete" id={{post.post_id}}>
+  </div>
   {% endfor %}
 </ul>
+<script src="/static/update-posts.js"></script>
+
 {% endblock %}

@@ -78,7 +78,15 @@ def create_post():
 def show_posts():
 
     posts = crud.get_all_posts()
-
+    print('********')
+    print('********')
+    print('********')
+    print('********')    
+    for post in posts:
+        print(post.post_text)
+    print('********')
+    print('********')
+    print('********')
     return render_template("posts.html", posts=posts)
 
 @app.route("/archive")
@@ -187,6 +195,14 @@ def delete_blog_post(post_id):
     
      post = crud.delete_blog_post(post_id)
      db.session.commit()
+     print('*****')
+     print('*****')
+     print('*****')
+     print('*****')
+     print('*****')
+     print("Testing delete function")
+     print('*****')
+     print('*****')
      return "Successfully deleted"
 # INSTEAD OF REDIRECTING, I CAN RETURN "SUCCESS OR POST DELETED"
 
@@ -197,7 +213,6 @@ def show_edit_blog_post(post_id):
      db.session.commit()
      return render_template("post_details.html", post=post)
 
-#TODO: capture what user typed in the javascript form. 
 
 @app.route('/edit-post/<post_id>', methods=["POST"])
 def edit_blog_post(post_id):

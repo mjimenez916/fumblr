@@ -60,8 +60,6 @@ def edit_blog_post(post_id):
 
     return
 
-#TODO: pass in arguments: subject, post, tags
-
 
 if __name__ == '__main__':
     from server import app

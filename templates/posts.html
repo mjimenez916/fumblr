@@ -8,7 +8,7 @@
 {% for post in posts %}
 
 <h3> {{ post.post_subject }} </h3>
-<p>{{ post.post_text }}</p>
+<p>{{ post.post_text | safe }}</p>
 <p>Date: {{ post.post_date }}</p>
 <p>tags: {{ post.post_tag }}</p>
 
