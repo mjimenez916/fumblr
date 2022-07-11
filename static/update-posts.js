@@ -14,11 +14,16 @@ for (const button of document.querySelectorAll('.delete')) {
         evt.preventDefault()
         const post_id = evt.target.id
         fetch(`/delete-post/${post_id}`, {
+          // this is the end point i want to connect to
+          // this builds up the HTTP request
             method: 'POST',
-            body: JSON.stringify({key:'yay'}),
+            body: '',
+            // if my request has a lot of parameters/data, this shows it
             headers: {
               'Content-Type': 'application/json',
             },
+            // metadata is info about the request itself. content-type describes the format in my body
+            // can include language
           })
             // .then((response) => response.json())
             // .then((responseJson) => {
@@ -27,7 +32,7 @@ for (const button of document.querySelectorAll('.delete')) {
         post.style.display= 'none';
         });
     }
-
+// requests and responses have different requirements
 
 
    //        .then((response) => response.text())

@@ -210,7 +210,7 @@ def edit_blog_post(post_id):
     post_subject = request.form.get('post_subject')
     post_text = request.form.get('post_text')
     post_tag = request.form.get('post_tag')
-
+    # request.body will show line 20 from update-posts.js
     post.post_subject = post_subject
     post.post_text = post_text
     post.tag = post_tag
