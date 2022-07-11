@@ -2,13 +2,13 @@
 {% block title %}Blogr{% endblock %}
 
 {% block body %}
-<h1>View Posts by Date</h1>
+<h1>View Posts by Subject</h1>
 
 <ul>
   {% for post in posts %}
   <div id="post-{{post.post_id}}">
   <li><a href="/posts/{{ post.post_id }}">
-      {{ post.post_date }}
+      {{ post.post_subject }}
     </a>
   </li>
   <input type="submit" value="delete" class="delete" id={{post.post_id}}>

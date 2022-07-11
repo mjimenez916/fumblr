@@ -3,11 +3,11 @@
 
 {% block body %}
 <h1>Blog Posts</h1>
-<p><a href="/archive">View posts by date</a></p>
+<p><a href="/archive">View posts by subject</a></p>
 
 {% for post in posts %}
 
-<h3> {{ post.post_subject }} </h3>
+<h3><a href="/query">{{ post.post_subject }}</a></h3>
 <p>{{ post.post_text | safe }}</p>
 <p>Date: {{ post.post_date }}</p>
 <p>tags: {{ post.post_tag }}</p>
