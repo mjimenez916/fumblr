@@ -2,11 +2,13 @@
 {% block title %}Blogr{% endblock %}
 
 {% block body %}
+<div class="posts">
 <h1>Posts tagged "{{ query }}"</h1>
 {% for post in posts %}
 <h3> {{ post.post_subject }} </h3>
 <p> {{ post.post_text | safe }} </p>
 <p> {{ post.post_date }} </p>
 <p> tags: {{ post.post_tag }} </p>
+</div>
 {% endfor %}
 {% endblock %}

@@ -8,9 +8,9 @@ def create_user(username, password):
 
     return user
 
-def create_post(post_subject, post_text, post_date, post_tag):
+def create_post(post_subject, user_id, post_text, post_date, post_tag):
 
-    post = Post(post_subject=post_subject, post_text=post_text, post_date=post_date, post_tag=post_tag)
+    post = Post(post_subject=post_subject, user_id=user_id, post_text=post_text, post_date=post_date, post_tag=post_tag)
 
     return post
 

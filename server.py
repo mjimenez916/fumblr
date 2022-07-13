@@ -67,8 +67,8 @@ def create_post():
     post_text = request.form.get('post_text')
     post_date = datetime.now()
     post_tag = request.form.get('post_tag')
-
-    post = crud.create_post(post_subject, post_text, post_date, post_tag)
+    user_id = session['current_user']
+    post = crud.create_post(post_subject, user_id, post_text, post_date, post_tag)
     db.session.add(post)
     db.session.commit()
 
@@ -77,22 +77,23 @@ def create_post():
 @app.route("/posts")
 def show_posts():
 
-    posts = crud.get_all_posts()  
+#    posts = crud.get_all_posts()  
 
-    return render_template("posts.html", posts=posts)
+#    return render_template("posts.html", posts=posts)
 
-#    if 'current_user' in session:
-#       user_id = session['current_user']
-#        
-#    posts = crud.get_posts_by_user_id(user_id)
-#    for post in posts:
-#        print(post.post_text)
-#            
-#       return render_template("posts.html", posts=posts)
-#    else:
-#        flash("You must log in to view this content")
-#
-#        return redirect("/")
+    if 'current_user' in session:
+        user_id = session['current_user']
+        
+        posts = crud.get_posts_by_user_id(user_id)
+        for post in posts:
+           print(post.post_text)
+       
+        return render_template("posts.html", posts=posts)
+   
+    else:
+        flash("You must log in to view this content")
+
+        return redirect("/")
 
 
 @app.route("/delete-posts")

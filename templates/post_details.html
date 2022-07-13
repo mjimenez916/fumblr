@@ -2,6 +2,7 @@
 {% block title %}Post Details{% endblock %}
 
 {% block body %}
+<div class="post-details">
 <h2>{{ post.post_subject }}</h2>
 
 {{ post.post_text | safe }}
@@ -9,7 +10,9 @@
 <p> tags:
   {{ post.post_tag }}
 </p>
+</div>
 
+<div class="edit-button">
 <input type="button" value="edit" id="editButton"><br>
     <head>
       <meta charset="UTF-8">
@@ -42,7 +45,7 @@
       </script>
     </body>
     <script src="/static/edit-posts.js"></script>
-
+  </div>
 
 {% endblock %}
 

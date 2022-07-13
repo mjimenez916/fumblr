@@ -19,7 +19,7 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg" style="background-color: #ffffff">
       <a class="navbar-brand" href="/dashboard">Tech Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
             <a class="nav-link" href="/public-profile">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/posts">Programming</a>
+            <a class="nav-link" href="/posts">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/resources">Resources</a>
@@ -52,8 +52,8 @@
         </ul>
         <div class="search-container">
           <form action="/query" method="GET">
-            <input type="text" name="query" placeholder="search posts by tag">
-            <input type="submit" value="search">
+            <input type="text" name="query" placeholder="Search">
+            <input type="submit" value="Search">
           </form>
         </div>
       </div>

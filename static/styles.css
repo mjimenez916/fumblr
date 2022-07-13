@@ -1,3 +1,45 @@
+h1 {
+  text-align: center;
+}
+
 #blogtext {
     display: none;
   }
+
+body {
+background-image: url('https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+}
+
+p {
+  font: 15px Arial;
+}
+
+.posts {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+}
+
+.login {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+}
+
+.post-details {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+}
+
+.edit-button {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+}
+
+.delete-button {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+}
