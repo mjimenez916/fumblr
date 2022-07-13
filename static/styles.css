@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  padding-top: 50px;
 }
 
 #blogtext {
@@ -18,6 +19,8 @@ p {
   text-align: justify;
   margin: auto;
   width: 50%;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .login {
@@ -42,4 +45,9 @@ p {
   text-align: justify;
   margin: auto;
   width: 50%;
+}
+
+.create-post {
+  padding-top: 25px;
+  padding-left: 500px;
 }
