@@ -78,17 +78,29 @@ def create_post():
 def show_posts():
 
     posts = crud.get_all_posts()  
-    for post in posts:
-        print(post.post_text)
 
     return render_template("posts.html", posts=posts)
 
-@app.route("/archive")
-def show_posts_by_date():
+#    if 'current_user' in session:
+#       user_id = session['current_user']
+#        
+#    posts = crud.get_posts_by_user_id(user_id)
+#    for post in posts:
+#        print(post.post_text)
+#            
+#       return render_template("posts.html", posts=posts)
+#    else:
+#        flash("You must log in to view this content")
+#
+#        return redirect("/")
+
+
+@app.route("/delete-posts")
+def show_posts_to_delete():
 
     posts = crud.get_posts_ordered_by_date()
 
-    return render_template("archive.html", posts=posts)
+    return render_template("delete-posts.html", posts=posts)
 
 @app.route("/posts/<post_id>")
 def show_post_detail(post_id):
@@ -106,21 +118,21 @@ def process_login():
     user = crud.get_user_by_username(username)
 
     if user.password == password:
-        session['current_user'] = user.username
+        session['current_user'] = user.user_id
         flash("Login success!")
-        return redirect("/profile")
+        return redirect("/dashboard")
     
     if user.password != password:
         flash("Cannot find an account with those credentials. Please try again.")
         return redirect("/")
 
 
-@app.route("/logout", methods = ["POST"])
+@app.route("/logout")
 def process_logout():
     """Log user out."""
     if 'current_user' in session:
         del session['current_user']
-    flash("Logged out.")
+    flash("You have successfully logged out.")
     return redirect("/")
 
 @app.route('/users')
@@ -128,10 +140,10 @@ def show_user():
     users = crud.get_all_users()
     return render_template("users.html", users=users)
 
-@app.route('/profile')
+@app.route('/dashboard')
 def show_user_profile():
 
-    return render_template("profile.html")
+    return render_template("dashboard.html")
 
 @app.route('/create-post')
 def create_blog_post_page():
@@ -197,10 +209,10 @@ def delete_blog_post(post_id):
 
 @app.route('/edit-post/<post_id>', methods=["GET"])
 def show_edit_blog_post(post_id):
-    
-     post = crud.get_post_by_id(post_id)
-     db.session.commit()
-     return render_template("post_details.html", post=post)
+    print(post_id)
+    post = crud.get_post_by_id(post_id)
+    # db.session.commit()
+    return render_template("post_details.html", post=post)
 
 
 @app.route('/edit-post/<post_id>', methods=["POST"])
@@ -219,6 +231,15 @@ def edit_blog_post(post_id):
 
     return redirect("/posts")
 
+@app.route('/public-profile')
+def show_public_profile():
+
+    return render_template("public-profile.html")
+
+@app.route('/resources')
+def show_resources_page():
+
+    return render_template("resources.html")
 
 if __name__ == "__main__":
     app.secret_key = "mango"

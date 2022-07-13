@@ -3,7 +3,20 @@
 
 {% block body %}
 <h1>Blog Posts</h1>
-<p><a href="/archive">View posts by subject</a></p>
+
+<!-- <h4><label for="query">Search posts by tag:</label></h4>
+<form action="/query" method="GET">
+    <input type="text" name="query">
+    <input type="submit">
+</form>
+
+<div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+</div> -->
+
 
 {% for post in posts %}
 
@@ -14,10 +27,5 @@
 
 {% endfor %}
 
-<h4><label for="query">Search posts by tag:</label></h4>
-<form action="/query" method="GET">
-    <input type="text" name="query">
-    <input type="submit">
-</form>
 
 {% endblock %}

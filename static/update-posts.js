@@ -6,7 +6,7 @@ function savedEditedPost() {
     document.querySelector('#blogtext').style.display = 'none';
 };
 
-// submitButton.addEventListener('click', savedEditedPost);
+//submitButton.addEventListener('click', savedEditedPost);
 
 // event listener for delete button
 for (const button of document.querySelectorAll('.delete')) {

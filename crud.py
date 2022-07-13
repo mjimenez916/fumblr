@@ -38,6 +38,13 @@ def get_posts_by_tag(tag_name):
 
     return Post.query.filter(Post.post_tag == tag_name ).all()
 
+def get_posts_by_user_id(user_id):
+
+    return Post.query.filter_by(user_id = user_id).all()
+
+    #return User.query.filter(User.username == username).first()
+
+
 def show_all_images():
 
     return Image.query.all()
