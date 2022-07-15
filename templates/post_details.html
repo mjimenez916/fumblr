@@ -28,9 +28,9 @@
     </head>
     <body>
       <form action="/edit-post/{{post.post_id}}" method="post" id="blogtext">
-          <textarea id="post_subject" type="post_subject" name="post_subject" rows="1" cols="115" placeholder="Subject">{{ post.post_subject }}</textarea>
+          <textarea id="post_subject" type="post_subject" name="post_subject" rows="1" cols="82" placeholder="Subject">{{ post.post_subject }}</textarea>
           <textarea id="post_text" type="post_text" name="post_text">{{ post.post_text }}</textarea>
-          <textarea id="post_tag" type="post_tag" name="post_tag" rows="1" cols="115" placeholder="Tags">{{ post.post_tag }}</textarea><br>
+          <textarea id="post_tag" type="post_tag" name="post_tag" rows="1" cols="82" placeholder="Tags">{{ post.post_tag }}</textarea><br>
           <input type="submit">
       </form>
       <script>
@@ -38,7 +38,7 @@
           placeholder: 'Description',
           tabsize: 2,
           height: 500,
-          width: 1000
+          width: 725,
         });
       </script>
       <script src="/static/update-posts.js">

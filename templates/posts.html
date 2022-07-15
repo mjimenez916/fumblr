@@ -20,7 +20,7 @@
 
 {% for post in posts %}
 
-<div style="width: 50%" class="posts">
+<div style="width: 50%" class="posts" type="text/jsx">
 <h3>{{ post.post_subject }}</h3>
 <p>{{ post.post_text | safe }}</p>
 <p>Date: {{ post.post_date }}</p>

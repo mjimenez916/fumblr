@@ -77,10 +77,6 @@ def create_post():
 @app.route("/posts")
 def show_posts():
 
-#    posts = crud.get_all_posts()  
-
-#    return render_template("posts.html", posts=posts)
-
     if 'current_user' in session:
         user_id = session['current_user']
         
