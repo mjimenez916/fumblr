@@ -20,7 +20,7 @@
 
 {% for post in posts %}
 
-<div style="width: 50%" class="posts" type="text/jsx">
+<div style="width: 50%" class="posts">
 <h3>{{ post.post_subject }}</h3>
 <p>{{ post.post_text | safe }}</p>
 <p>Date: {{ post.post_date }}</p>
@@ -28,5 +28,24 @@
 </div>
 {% endfor %}
 
+<!-- Footer -->
+<footer class="bg-dark text-center text-white" id="footer">Copyright 2022
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
 {% endblock %}

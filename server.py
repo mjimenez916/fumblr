@@ -44,7 +44,7 @@ def check_if_user_logged_in():
     if 'current_user' not in session:
         redirect("/")
 
-@app.route('/users', methods=["POST"])
+@app.route('/register', methods=["POST"])
 def register_user():
     username = request.form.get('username')
     password = request.form.get('password')
@@ -60,6 +60,28 @@ def register_user():
         flash("Account created! Please log in.")
 
     return redirect("/")
+
+@app.route('/register-user')
+def show_registration_page():
+
+    return render_template("register-user.html")
+
+@app.route('/login', methods = ["POST"])
+def process_login():
+    username = request.form.get('username')
+    password = request.form.get('password')
+
+    user = crud.get_user_by_username(username)
+
+    if user.password == password:
+        session['current_user'] = user.user_id
+        flash("Login success!")
+        return redirect("/dashboard")
+    
+    if user.password != password:
+        flash("Cannot find an account with those credentials. Please try again.")
+        return redirect("/")
+
 
 @app.route('/posts', methods=["POST"])
 def create_post():
@@ -91,6 +113,23 @@ def show_posts():
 
         return redirect("/")
 
+@app.route("/dashboard")
+def show_posts_dashboard():
+
+    if 'current_user' in session:
+        user_id = session['current_user']
+        
+        posts = crud.get_posts_by_user_id(user_id)
+        for post in posts:
+           print(post.post_text)
+       
+        return render_template("dashboard.html", posts=posts)
+   
+    else:
+        flash("You must log in to view this content")
+
+        return redirect("/")
+
 
 @app.route("/delete-posts")
 def show_posts_to_delete():
@@ -106,22 +145,6 @@ def show_post_detail(post_id):
     post = crud.get_post_by_id(post_id)
 
     return render_template("post_details.html", post=post)
-
-@app.route('/login', methods = ["POST"])
-def process_login():
-    username = request.form.get('username')
-    password = request.form.get('password')
-
-    user = crud.get_user_by_username(username)
-
-    if user.password == password:
-        session['current_user'] = user.user_id
-        flash("Login success!")
-        return redirect("/dashboard")
-    
-    if user.password != password:
-        flash("Cannot find an account with those credentials. Please try again.")
-        return redirect("/")
 
 
 @app.route("/logout")

@@ -26,19 +26,17 @@
     </p>
   </form> -->
 {% block body %}
-<h1>Blog Home</h1>
+<h1>Login</h1>
 <div class="login";">
 <form action="/login" method="POST">
   <!-- Username input -->
   <div class="form-outline mb-4">
-    <input type="text" name="username" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Username</label>
+    <input type="text" name="username" id="form2Example1" class="form-control" placeholder="Username"/>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" name="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
+    <input type="password" name="password" id="form2Example2" class="form-control" placeholder="Password"/>
   </div>
 
   <!-- 2 column grid layout for inline styling -->
@@ -48,12 +46,32 @@
   </div>
  
   <!-- Submit button -->
-  <input type="submit" class="btn btn-primary btn-block mb-4">
-
-  <!-- Register buttons -->
-  <div class="text-center">
-    <p>Not a member? <a href="/register">Register</a></p>
-  </div>
+  <input type="submit" class="btn btn-primary">
 </form>
+  <!-- Register buttons -->
+  <div class="text-center" id="not-a-member">
+    <p>Not a member? <a href="/register-user">Register</a></p>
+  </div>
 </div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white" id="footer-login">Copyright 2022
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
 {% endblock %}
