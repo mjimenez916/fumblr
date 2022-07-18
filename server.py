@@ -28,6 +28,11 @@ def show_text_editor():
 
     return render_template('index.html')
 
+@app.route('/landing-page')
+def show_landing_page():
+
+    return render_template('landing-page.html')
+
 @app.route('/')
 def homepage():
 
@@ -179,12 +184,12 @@ def search_post_by_tag():
 
     return render_template("query.html", query=query, posts=posts)
 
-@app.route('/images')
+@app.route('/about')
 def show_image():
     #Grabs images from database.
     images = crud.show_all_images()
 
-    return render_template("images.html", images=images)
+    return render_template("about.html", images=images)
 
 
 @app.route('/upload-image', methods=["POST"])
@@ -208,13 +213,13 @@ def upload_image():
     db.session.add(image)
     db.session.commit()
 
-    return render_template("upload-image.html", uploaded_image=uploaded_image, result=result, img_url=img_url, image=image)
+    return render_template("about.html", uploaded_image=uploaded_image, result=result, img_url=img_url, image=image)
 
 
 @app.route('/upload-image', methods=["GET"])
 def show_upload_image_page():
 
-    return render_template("upload-image.html")
+    return render_template("about.html")
 
 @app.route('/delete-post/<post_id>', methods=["POST"])
 def delete_blog_post(post_id):
@@ -260,6 +265,12 @@ def show_public_profile():
 def show_resources_page():
 
     return render_template("resources.html")
+
+@app.route('/about')
+def show_about_page():
+
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.secret_key = "mango"
