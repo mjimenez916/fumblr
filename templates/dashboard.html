@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Blogr{% endblock %}
+
+{% block body %}
+<div class="body-non-landing-page">
+<h1>Blog Dashboard</h1>
+<!--Main Navigation-->
+    <!-- Sidebar -->
+<a href="/create-post" class="create-post-dashboard"><button type="button" class="btn btn-primary btn-lg" id="create-post-button-db">Create Post</button></a>
+    <div class="entire-sidebar">
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          </a>
+          <!-- Collapsed content -->
+          <ul id="collapseExample1" class="collapse show list-group list-group-flush">
+            <li class="list-group-item py-1">
+              <a href="/posts" class="text-reset">Blog Posts</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="/delete-posts" class="text-reset">Edit/Delete Posts</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="/resources" class="text-reset">Resources</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="/contact" class="text-reset">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div>
+    <!-- Sidebar -->
+
+
+  {% for post in posts %}
+
+  <div style="width: 50%" class="posts-dashboard">
+  <h3>{{ post.post_subject }}</h3>
+  <p>{{ post.post_text | safe }}</p>
+  <p>Date: {{ post.post_date }}</p>
+  <p>tags: {{ post.post_tag }}</p>
+  </div>
+  {% endfor %}
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white" id="footer">Copyright 2022
+  <!-- Grid container -->
+  <div class="container p-4">
+</div>
+{% endblock %}
