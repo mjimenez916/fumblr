@@ -57,7 +57,7 @@ def register_user():
     user = crud.get_user_by_username(username)
 
     if user:
-        flash("Cannot create an account with that username. Try again.")
+        flash("Cannot create an account with that username.")
     else:
         user = crud.create_user(username, password)
         db.session.add(user)

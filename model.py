@@ -41,6 +41,13 @@ class Image(db.Model):
 
     post = db.relationship("Post", backref= "images")
 
+class Comments(db.Model):
+    __tablename__ = "comments"
+    comment_id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.post_id'))
+
+    post = db.relationship("Post", backref= "comments")
+
 
 def connect_to_db(flask_app, db_uri="postgresql:///posts", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
