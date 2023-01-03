@@ -18,4 +18,4 @@
 <img width="1432" alt="Screen Shot 2023-01-02 at 8 09 55 PM" src="https://user-images.githubusercontent.com/98375833/210301269-a252d7e3-28b0-4217-a31a-528afcff99b3.png">
 
 # Tech Stack
-## Python, JavaScript, HTML, CSS, SQL, Flask, Jinja, Bootstrap, PostgreSQL, and SQLAlchemy.
+### Python, JavaScript, HTML, CSS, SQL, Flask, Jinja, Bootstrap, PostgreSQL, and SQLAlchemy.
