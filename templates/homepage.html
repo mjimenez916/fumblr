@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}Blogr{% endblock %}
-  <!-- <h3>Create an Account</h3>
+{% block title %}Fumblr{% endblock %}
+
+<h3>Create an Account</h3>
   <form action="/users" method="POST">
     <p>
     Username <input type="text" name="username">
@@ -26,7 +27,10 @@
     </p>
   </form> -->
 {% block body %}
-<h1>Welcome to BLOGR</h1>
+<div class="landing-page">
+<div class="fumblr-custom-font">
+<h1>Fumblr</h1>
+</div>
 <div class="login";">
 <form action="/login" method="POST">
   <!-- Username input -->
@@ -50,15 +54,16 @@
 </form>
   <!-- Register buttons -->
   <div class="text-center" id="not-a-member">
-    <p>Not a member? <a href="/register-user">Register</a></p>
+    <p>Not a member? <a href="/register-user" style="color: white">Register here!</a></p>
   </div>
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-center text-white" id="footer-login">Copyright 2022
+<footer class="bg-dark text-center text-white" id="footer-login">
   <!-- Grid container -->
   <div class="container p-4">
     <!-- Section: Social media -->
     <section class="mb-4">
-
+  </div>
+</div>
 {% endblock %}

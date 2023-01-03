@@ -29,6 +29,8 @@ class Post(db.Model):
 
     user = db.relationship("User", backref="posts")
     # images can be accessed due to line 42
+    # TODO: ask Zack to explain .relationship() because i still don't understand
+    #       foreign and primary keys
     def __repr__(self):
         return f"<Post post_id={self.post_id} post_text={self.post_text}>"
 
@@ -63,8 +65,12 @@ def connect_to_db(flask_app, db_uri="postgresql:///posts", echo=True):
 if __name__ == "__main__":
     from server import app
 
+    # I understand that this tells the app to run ONLY if __name__ == __main__
+    # but what the hell is __name__ and __main__ actually? why is it relevant?
+
     # Call connect_to_db(app, echo=False) if your program output gets
     # too annoying; this will tell SQLAlchemy not to print out every
     # query it executes.
+    
 
     connect_to_db(app)

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Tech Blog{% endblock %}
 {% block body %}
-<h1>Create a Post</h1>
 <div class="create-post">
 <html lang="en">
   <head>
@@ -17,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   </head>
   <body>
+  <h2>Create Post</h2>
     <form action="/posts" method="post">
         <textarea id="post_subject" type="post_subject" name="post_subject" rows="1" cols="115" placeholder="Subject"></textarea>
         <textarea id="post_text" type="post_text" name="post_text"></textarea>

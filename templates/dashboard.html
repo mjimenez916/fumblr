@@ -1,38 +1,17 @@
 {% extends 'base.html' %}
-{% block title %}Blogr{% endblock %}
-
+{% block title %}fumblr{% endblock %}
 {% block body %}
 <div class="body-non-landing-page">
-<h1>Blog Dashboard</h1>
-<!--Main Navigation-->
-    <!-- Sidebar -->
-<a href="/create-post" class="create-post-dashboard"><button type="button" class="btn btn-primary btn-lg" id="create-post-button-db">Create Post</button></a>
-    <div class="entire-sidebar">
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
-          </a>
-          <!-- Collapsed content -->
-          <ul id="collapseExample1" class="collapse show list-group list-group-flush">
-            <li class="list-group-item py-1">
-              <a href="/posts" class="text-reset">Blog Posts</a>
-            </li>
-            <li class="list-group-item py-1">
-              <a href="/delete-posts" class="text-reset">Edit/Delete Posts</a>
-            </li>
-            <li class="list-group-item py-1">
-              <a href="/resources" class="text-reset">Resources</a>
-            </li>
-            <li class="list-group-item py-1">
-              <a href="/contact" class="text-reset">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    </div>
-    <!-- Sidebar -->
+<h1>Dashboard</h1>
 
+    <div class="dashboard-buttons">
+    <div class="col-md-12 mb-4">
+      <a href="/create-post"><button type="button" class="btn btn-primary btn-square-md"><i class="fa-solid fa-pencil fa-3x"></i>Create</button></a>
+      <a href="/delete-posts"><button type="button" class="btn btn-primary btn-square-md"><i class="fa-solid fa-strikethrough fa-3x"></i><br>Edit</button></a>
+      <a href="/delete-posts"><button type="button" class="btn btn-primary btn-square-md"><i class="fa-solid fa-trash fa-3x"></i><br>Delete</button></a>
+      <a href="/posts"><button type="button" class="btn btn-primary btn-square-md"><i class="fa-brands fa-readme fa-3x"></i><br>Read</button></a>
+      <a href="/logout"><button type="button" class="btn btn-primary btn-square-md"><i class="fa-solid fa-right-from-bracket fa-3x"></i>Logout</button></a>
+    </div>
 
   {% for post in posts %}
 
@@ -45,7 +24,7 @@
   {% endfor %}
 
 <!-- Footer -->
-<footer class="bg-dark text-center text-white" id="footer">Copyright 2022
+<footer class="bg-dark text-center text-white" id="footer">
   <!-- Grid container -->
   <div class="container p-4">
 </div>

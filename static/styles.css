@@ -2,13 +2,32 @@ h1 {
   text-align: center;
   padding-top: 50px;
   color: white;
+  font-family: arial;
+  font-size: 50;
 }
 
+h2 {
+  padding-left: 400px;
+  color: white;
+  font-family: arial;
+  font-size: 50;
+}
+
+.edit-post-h2-element {
+  padding-left: 200px;
+}
+.fumblr-custom-font {
+  font-family: arial;
+}
+
+
 .landing-page {
-  background-image: url('https://media0.giphy.com/media/WUyQbeKHhpaHrrKJu6/giphy.gif?cid=ecf05e47g5u2uhl88oelfotekojv85axr1oszk2o9gibu1em&rid=giphy.gif&ct=g');
+  background-image: url("https://media2.giphy.com/media/l4KihuqeuJEi9qLSM/giphy.gif?cid=ecf05e4728117jr4s1wdyopgh0vfco8i0np77r66rq3cht27&rid=giphy.gif&ct=g");
+  background-repeat: no-repeat;
+  background-size: 1500px 800px;
   text-align: center;
   padding-top: 50px;
-  color: white;
+  padding-bottom: 260px;
 }
 
 #blogtext {
@@ -16,8 +35,9 @@ h1 {
   }
 
 body {
-  background-image: url('https://images.unsplash.com/photo-1583407723467-9b2d22504831?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  background-color: #003568;
 }
+
 
 p {
   font: 15px Arial;
@@ -31,7 +51,7 @@ p {
   padding-bottom: 0px;
   padding-left: 15px;
   padding-right:15px;
-  background-color: #FFFF;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -90,6 +110,7 @@ p {
   padding-top: 25px;
   padding-left: 250px;
   padding-bottom: 50px;
+  background-color: #003568;
 }
 
 .search-container {
@@ -172,6 +193,7 @@ p {
   bottom:0;
   left:0;
   right:0;
+  color: #003568;
  }
 
 .entire-sidebar {
@@ -201,7 +223,7 @@ a:link { text-decoration: none; }
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10%
+  height: 0%;
 }
 
 #footer-register {
@@ -211,6 +233,22 @@ a:link { text-decoration: none; }
   height: 10%;
 }
 
-.create-post-dashboard {
-  padding-left: 70px;
+.btn {
+  background-color: orange;
+  text-align: center;
 }
+
+.dashboard-buttons {
+  text-align: center;
+}
+
+.btn-square-md {
+  width: 75px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 75px !important;
+  text-align: center;
+  padding: 0px;
+  font-size:12px;
+  background-color: orange;
+  }

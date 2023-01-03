@@ -11,7 +11,7 @@ from jinja2 import StrictUndefined
 from datetime import datetime
 import re
 import os
-import cloudinary.uploader
+# import cloudinary.uploader
 
 CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
 CLOUDINARY_SECRET = os.environ['CLOUDINARY_SECRET']
@@ -134,6 +134,7 @@ def show_posts_dashboard():
         flash("You must log in to view this content")
 
         return redirect("/")
+        #return redirect("/")
 
 
 @app.route("/delete-posts")
@@ -270,6 +271,11 @@ def show_resources_page():
 def show_about_page():
 
     return render_template("about.html")
+
+
+#git notes
+# never delete commits
+# git
 
 
 if __name__ == "__main__":
